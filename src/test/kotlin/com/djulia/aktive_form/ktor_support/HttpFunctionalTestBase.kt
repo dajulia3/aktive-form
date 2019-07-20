@@ -1,4 +1,4 @@
-package com.djulia.aktive_form.ktor
+package com.djulia.aktive_form.ktor_support
 
 import com.djulia.aktive_form.App
 import io.ktor.server.engine.ApplicationEngine

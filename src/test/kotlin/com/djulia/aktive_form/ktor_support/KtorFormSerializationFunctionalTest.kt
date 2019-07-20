@@ -1,4 +1,4 @@
-package com.djulia.aktive_form.ktor
+package com.djulia.aktive_form.ktor_support
 
 import com.djulia.aktive_form.Fizzer
 import com.djulia.aktive_form.WizzBanger
