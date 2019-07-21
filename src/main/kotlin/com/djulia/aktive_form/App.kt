@@ -91,7 +91,7 @@ fun Application.module() {
             files.first().streamProvider().use {
                 val fileContents = it.readBytes().toString(Charset.defaultCharset())
                 val formWithFile =
-                    FormWithFile(name = form.name, tag = form.tag, fileContents = fileContents)
+                    FormWithFileResp(name = form.name, tag = form.tag, fileContents = fileContents)
                 call.respond(HttpStatusCode.Created, formWithFile)
             }
         }
@@ -103,7 +103,7 @@ fun Application.module() {
 }
 
 data class Form(val name: String, val tag: String)
-data class FormWithFile(val name: String, val tag: String, val fileContents: String)
+data class FormWithFileResp(val name: String, val tag: String, val fileContents: String)
 
 data class Fizzer(
     var fizziness: String,
