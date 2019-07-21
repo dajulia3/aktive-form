@@ -12,10 +12,11 @@ plugins {
     id "application"
     id 'java-library'
     id 'maven-publish'
+    id 'maven'
 }
 
 version "0.1"
-group "com.djulia"
+group "com.github.dajulia3"
 
 repositories {
     mavenCentral()
