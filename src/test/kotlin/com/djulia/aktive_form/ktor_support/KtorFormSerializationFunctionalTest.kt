@@ -1,7 +1,5 @@
 package com.djulia.aktive_form.ktor_support
 
-import com.djulia.aktive_form.Fizzer
-import com.djulia.aktive_form.WizzBanger
 import io.restassured.RestAssured
 import io.restassured.http.ContentType
 import org.junit.jupiter.api.Test

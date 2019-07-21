@@ -1,6 +1,5 @@
 package com.djulia.aktive_form.ktor_support
 
-import com.djulia.aktive_form.App
 import io.ktor.server.engine.ApplicationEngine
 import io.restassured.RestAssured
 import io.restassured.response.ResponseBodyExtractionOptions
@@ -47,7 +46,7 @@ abstract class ServerTest {
                     )
                 } else {
                     server =
-                        com.djulia.aktive_form.startServer(port = port, wait = false)
+                        startServer(port = port, wait = false)
                     Runtime.getRuntime().addShutdownHook(Thread { server.stop(0, 0, TimeUnit.SECONDS) })
                 }
 

@@ -1,7 +1,5 @@
-package com.djulia.aktive_form
+package com.djulia.aktive_form.ktor_support
 
-import com.djulia.aktive_form.ktor_support.ActiveFormUrlEncodedToContentTypeConverter
-import com.djulia.aktive_form.ktor_support.RequestAttributes
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
@@ -91,7 +89,11 @@ fun Application.module() {
             files.first().streamProvider().use {
                 val fileContents = it.readBytes().toString(Charset.defaultCharset())
                 val formWithFile =
-                    FormWithFileResp(name = form.name, tag = form.tag, fileContents = fileContents)
+                    FormWithFileResp(
+                        name = form.name,
+                        tag = form.tag,
+                        fileContents = fileContents
+                    )
                 call.respond(HttpStatusCode.Created, formWithFile)
             }
         }
