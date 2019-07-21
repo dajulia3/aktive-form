@@ -41,7 +41,35 @@ fun Application.module() {
 }
 ```
 
+The html form for this endpoint should look like this:
+```html
+<form action="/wizz-banger" method="post">
+    <input type="text" name="wizzbanger[id]"/>
+    <input type="text" name="wizzbanger[name]"/>
+    <input type="text" name="wizzbanger[fizzer][fizziness]"/>
+    <input type="text" name="wizzbanger[fizzer][temperature]"/>
+    <input type="submit">
+ </form>
+```
+
+#### Ommitting classnames for top level files
+For convenience sake, you can omit the class name for top-level fields. 
+This is convenient when you don't have any nested objects.
+```html
+<form action="/wizz-banger" method="post">
+    <input type="text" name="id"/>
+    <input type="text" name="name"/>
+    
+    <!-- still need the class name for attributes of child objects --> 
+    <input type="text" name="wizzbanger[fizzer][fizziness]"/>
+    <input type="text" name="wizzbanger[fizzer][temperature]"/>
+    <input type="submit">
+ </form>
+```
+
+
 ###Handling forms with file uploads 
+
 ```$kotlin
 data class Form(val name: String, val tag: String)
 data class FormWithFileResp(val name: String, val tag: String, val fileContents: String)
