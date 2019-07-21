@@ -3,6 +3,21 @@
 Better form processing for Ktor inspired by Ruby on Rails/Rack's form handling. Bind forms to kotlin data classes. Just follow the Ruby on Rails naming convention for form fields. You will still have access to File data parts via request attributes. 
 
 ###Installation
+
+####1. Add the dependency
+```groovy
+//build.gradle
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.dajulia3:aktive-form:v0.1'
+}
+
+```
+
+####2. Setup Ktor ContentNegotiation 
 ```kotlin
 fun Application.module() {
     install(ContentNegotiation) {
