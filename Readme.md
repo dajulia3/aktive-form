@@ -1,10 +1,10 @@
-#AktiveForm  
+# AktiveForm # 
 
 Better form processing for Ktor inspired by Ruby on Rails/Rack's form handling. Bind forms to kotlin data classes. Just follow the Ruby on Rails naming convention for form fields. You will still have access to File data parts via request attributes. 
 
-###Installation
+### Installation ###
 
-####1. Add the dependency
+#### 1. Add the dependency ####
 ```groovy
 //build.gradle
 repositories {
@@ -17,7 +17,7 @@ dependencies {
 
 ```
 
-####2. Setup Ktor ContentNegotiation 
+#### 2. Setup Ktor ContentNegotiation ####
 ```kotlin
 fun Application.module() {
     install(ContentNegotiation) {
@@ -37,7 +37,7 @@ fun Application.module() {
 }
 ```
 
-###Handling form submissions
+### Handling form submissions ###
 ```kotlin
 data class Fizzer(
     var fizziness: String,
@@ -67,7 +67,7 @@ The html form for this endpoint should look like this:
  </form>
 ```
 
-#### Ommitting classnames for top level files
+#### Ommitting classnames for top level files ####
 For convenience sake, you can omit the class name for top-level fields. 
 This is convenient when you don't have any nested objects.
 ```html
@@ -83,7 +83,7 @@ This is convenient when you don't have any nested objects.
 ```
 
 
-###Handling forms with file uploads 
+### Handling forms with file uploads ###
 
 ```kotlin
 data class Form(val name: String, val tag: String)
@@ -109,7 +109,7 @@ fun Application.module() {
 }
 ``` 
 
-###Coming Soon: Form Helpers
+### Coming Soon: Form Helpers ###
 
 The next feature to implement is form helpers. We'd like to be able to generate forms for data classes as below. 
 The example uses Thymeleaf for templating but the implementation is completely agnostic of Thymeleaf.
