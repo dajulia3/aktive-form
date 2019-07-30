@@ -48,20 +48,6 @@ class ActiveFormUrlEncodedToContentTypeConverter(private val objectMapper: Objec
         return this.context.request.isMultipart()
     }
 
-    suspend fun ApplicationCall.receiveFileAsInputStream(): InputStream? {
-        val multipartData = receiveMultipart()
-
-        var part: PartData?
-        do {
-            part = multipartData.readPart()
-            if (part is PartData.FileItem) {
-                return part.streamProvider().buffered()
-            }
-        } while (part != null)
-
-        return null
-    }
-
     private suspend fun processFormToStringAndSaveFilesAsAttributes(context: PipelineContext<ApplicationReceiveRequest, ApplicationCall>): String {
         val formItemParts = mutableListOf<PartData.FormItem>()
         val files = mutableListOf<PartData.FileItem>()
