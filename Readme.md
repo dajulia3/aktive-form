@@ -67,7 +67,7 @@ The html form for this endpoint should look like this:
  </form>
 ```
 
-#### Ommitting classnames for top level files ####
+#### Ommitting classnames for top level fields ####
 For convenience sake, you can omit the class name for top-level fields. 
 This is convenient when you don't have any nested objects.
 ```html
